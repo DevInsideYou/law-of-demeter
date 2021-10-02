@@ -6,7 +6,7 @@ object DependencyGraph:
   lazy val make: Controller =
     Controller.make(boundary)
 
-  lazy val boundary: Boundary =
+  private lazy val boundary: Boundary =
     Boundary.make(
       gate = Gate.make(
         storage = StorageImpl.make,

@@ -2,8 +2,8 @@ package dev.insideyou
 package playground
 package report
 
-trait Gate extends Storage, Comparison
-object Gate:
+private trait Gate extends Storage, Comparison
+private object Gate:
   def make(storage: Storage, comparison: Comparison): Gate =
     new:
       export storage.*, comparison.*

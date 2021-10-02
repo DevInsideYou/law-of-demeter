@@ -2,7 +2,7 @@ package dev.insideyou
 package playground
 package comparison
 
-object StorageImpl:
+private object StorageImpl:
   lazy val make: Storage =
     new:
       override def countGooglePictures(of: String): Int = 50

@@ -2,8 +2,8 @@ package dev.insideyou
 package playground
 package comparison
 
-trait Gate extends Google, Storage
-object Gate:
+private trait Gate extends Google, Storage
+private object Gate:
   def make(google: Google, storage: Storage): Gate =
     new:
       export google.*, storage.*

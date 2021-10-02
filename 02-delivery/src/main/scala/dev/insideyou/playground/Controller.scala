@@ -1,5 +1,5 @@
 package dev.insideyou
 package playground
 
-trait Controller:
+private trait Controller:
   def run(): Unit

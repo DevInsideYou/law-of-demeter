@@ -5,7 +5,7 @@ package comparison
 trait Boundary:
   def doesGoogleHaveMorePicturesThanTheLastTimeWeChecked(of: String): Boolean
 
-object Boundary:
+private object Boundary:
   def make(gate: Gate): Boundary =
     new:
       override def doesGoogleHaveMorePicturesThanTheLastTimeWeChecked(of: String): Boolean =

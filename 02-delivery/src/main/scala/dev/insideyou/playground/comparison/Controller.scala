@@ -2,7 +2,7 @@ package dev.insideyou
 package playground
 package comparison
 
-object Controller:
+private object Controller:
   def make(boundary: Boundary): Controller =
     new:
       override def run(): Unit =

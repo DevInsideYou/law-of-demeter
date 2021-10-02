@@ -2,10 +2,10 @@ package dev.insideyou
 package playground
 package report
 
-trait Boundary:
+private trait Boundary:
   def sameThingForAllInputs: Option[List[Boolean]]
 
-object Boundary:
+private object Boundary:
   def make(gate: Gate): Boundary =
     new:
       override def sameThingForAllInputs: Option[List[Boolean]] =
