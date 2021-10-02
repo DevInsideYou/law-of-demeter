@@ -11,5 +11,5 @@ object Boundary:
       override def sameThingForAllInputs: Option[List[Boolean]] =
         Option.when(gate.isFeatureEnabled) {
           List("cats", "dogs", "hamsters")
-            .map(gate.comparisonBoundary.doesGoogleHaveMorePicturesThanTheLastTimeWeChecked)
+            .map(gate.doesGoogleHaveMorePicturesThanTheLastTimeWeChecked)
         }

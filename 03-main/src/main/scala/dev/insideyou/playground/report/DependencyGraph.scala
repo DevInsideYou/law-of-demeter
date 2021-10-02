@@ -10,6 +10,8 @@ object DependencyGraph:
     Boundary.make(
       gate = Gate.make(
         storage = StorageImpl.make,
-        comparisonBoundary = comparison.DependencyGraph.boundary,
+        comparison = ComparisonImpl.make(
+          comparisonBoundary = comparison.DependencyGraph.boundary
+        ),
       )
     )

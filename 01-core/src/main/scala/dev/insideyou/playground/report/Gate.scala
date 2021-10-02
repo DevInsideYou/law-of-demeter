@@ -2,18 +2,20 @@ package dev.insideyou
 package playground
 package report
 
-trait Gate extends Storage, HasOtherBoundaries
+trait Gate extends Storage, Comparison
 object Gate:
-  def make(storage: Storage, comparisonBoundary: comparison.Boundary): Gate =
-    val _comparisonBoundary = comparisonBoundary
-
+  def make(storage: Storage, comparison: Comparison): Gate =
     new:
-      export storage.*
-
-      override def comparisonBoundary = _comparisonBoundary
+      export storage.*, comparison.*
 
 private trait Storage:
   def isFeatureEnabled: Boolean
 
-private trait HasOtherBoundaries:
-  def comparisonBoundary: comparison.Boundary
+private trait Comparison:
+  def doesGoogleHaveMorePicturesThanTheLastTimeWeChecked(of: String): Boolean
+
+object ComparisonImpl:
+  def make(comparisonBoundary: comparison.Boundary): Comparison =
+    new:
+      override def doesGoogleHaveMorePicturesThanTheLastTimeWeChecked(of: String): Boolean =
+        comparisonBoundary.doesGoogleHaveMorePicturesThanTheLastTimeWeChecked(of)
