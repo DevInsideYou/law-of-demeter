@@ -21,13 +21,19 @@ lazy val playground =
     .in(file("."))
     .settings(name := "playground")
     .settings(commonSettings)
-    .aggregate(core, delivery, google, storage, main)
+    .aggregate(core, `core-self`, delivery, google, storage, main)
 
 lazy val core =
   project
     .in(file("01-core"))
     .settings(commonSettings)
     .settings(dependencies)
+
+lazy val `core-self` =
+  project
+    .in(file("02-core-self"))
+    .settings(commonSettings)
+    .dependsOn(core % Cctt)
 
 lazy val delivery =
   project
@@ -51,6 +57,7 @@ lazy val main =
   project
     .in(file("03-main"))
     .settings(commonSettings)
+    .dependsOn(`core-self` % Cctt)
     .dependsOn(delivery % Cctt)
     .dependsOn(google % Cctt)
     .dependsOn(storage % Cctt)

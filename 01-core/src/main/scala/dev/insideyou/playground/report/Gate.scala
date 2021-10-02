@@ -13,9 +13,3 @@ private trait Storage:
 
 private trait Comparison:
   def doesGoogleHaveMorePicturesThanTheLastTimeWeChecked(of: String): Boolean
-
-object ComparisonImpl:
-  def make(comparisonBoundary: comparison.Boundary): Comparison =
-    new:
-      override def doesGoogleHaveMorePicturesThanTheLastTimeWeChecked(of: String): Boolean =
-        comparisonBoundary.doesGoogleHaveMorePicturesThanTheLastTimeWeChecked(of)
