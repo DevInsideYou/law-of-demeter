@@ -1,6 +1,6 @@
 package dev.insideyou
 package playground
-package comparison
+package report
 
 object DependencyGraph:
   lazy val make: Controller =
@@ -9,7 +9,7 @@ object DependencyGraph:
   lazy val boundary: Boundary =
     Boundary.make(
       gate = Gate.make(
-        google = GoogleImpl.make,
-        storage = StorageImpl.make,
-      )
+        storage = StorageImpl.make
+      ),
+      comparisonBoundary = comparison.DependencyGraph.boundary,
     )

@@ -1,9 +1,9 @@
 package dev.insideyou
 package playground
-package comparison
+package report
 
 object Controller:
   def make(boundary: Boundary): Controller =
     new:
       override def run(): Unit =
-        println(boundary.doesGoogleHaveMorePicturesThanTheLastTimeWeChecked("cats"))
+        println(boundary.sameThingForAllInputs)
