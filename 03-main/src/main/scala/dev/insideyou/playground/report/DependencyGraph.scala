@@ -9,7 +9,7 @@ object DependencyGraph:
   lazy val boundary: Boundary =
     Boundary.make(
       gate = Gate.make(
-        storage = StorageImpl.make
-      ),
-      comparisonBoundary = comparison.DependencyGraph.boundary,
+        storage = StorageImpl.make,
+        comparisonBoundary = comparison.DependencyGraph.boundary,
+      )
     )
