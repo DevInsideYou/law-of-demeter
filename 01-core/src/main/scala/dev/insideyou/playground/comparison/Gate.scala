@@ -9,8 +9,8 @@ private object Gate:
       export google.*, storage.*
 
 private trait Google:
-  def countOurPictures(of: String): Int
+  def countGooglePictures(of: String): Int
 
 private trait Storage:
-  def countGooglePictures(of: String): Int
+  def countOurPictures(of: String): Int
   def updatePictureCount(of: String, newCount: Int): Unit

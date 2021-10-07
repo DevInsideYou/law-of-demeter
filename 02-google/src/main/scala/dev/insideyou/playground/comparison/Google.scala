@@ -5,4 +5,4 @@ package comparison
 private object GoogleImpl:
   lazy val make: Google =
     new:
-      override def countOurPictures(of: String): Int = 1000
+      override def countGooglePictures(of: String): Int = 50
