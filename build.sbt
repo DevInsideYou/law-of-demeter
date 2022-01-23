@@ -2,7 +2,7 @@ import Dependencies._
 import Util._
 
 ThisBuild / organization := "dev.insideyou"
-ThisBuild / scalaVersion := "3.0.2"
+ThisBuild / scalaVersion := "3.1.1"
 
 ThisBuild / scalacOptions ++=
   Seq(
